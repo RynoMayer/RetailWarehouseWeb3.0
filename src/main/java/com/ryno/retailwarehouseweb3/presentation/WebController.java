@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.ryno.retailwarehouseweb3.controller;
+package com.ryno.retailwarehouseweb3.presentation;
 
 import com.ryno.retailwarehouseweb3.domain.Appliance;
 import com.ryno.retailwarehouseweb3.service.ApplianceBrandService;
@@ -24,11 +24,16 @@ public class WebController {
     @Autowired
     private ApplianceBrandService appBrandService;
     //@RequestMapping(value = "cput",method = RequestMethod.GET)
+    @RequestMapping(value = "/",method = RequestMethod.GET)
+    public String getIndex(){
+        return "index";
+    }
+    
     @RequestMapping(value = "Samsung", method = RequestMethod.GET)
     
     public String getHome(){
-        List <Appliance> apps = appBrandService.getBrandStart("s");
-        System.out.println("Samsung controller was hit" +apps.size());
+        Appliance apps = appBrandService.getBrandStart("s");
+        System.out.println("Samsung controller was hit" +apps.Types());
         return "Samsung";
     }
     @RequestMapping(value = "Appls", method = RequestMethod.GET)

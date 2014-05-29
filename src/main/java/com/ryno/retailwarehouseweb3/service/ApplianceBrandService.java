@@ -13,6 +13,7 @@ import java.util.List;
  *
  * @author Ryno
  */
-public interface ApplianceBrandService {
-    public List<Appliance> getBrandStart(String letter);
+public interface ApplianceBrandService extends Service<Appliance, Long>{
+    public Appliance getBrandStart(String letter);
+    public int getNumberOfAppliances();
 }

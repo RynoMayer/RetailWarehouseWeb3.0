@@ -22,25 +22,55 @@ import org.springframework.stereotype.Service;
 public class ApplianceBrandServiceImpl implements ApplianceBrandService {
     
     @Autowired
-    private ApplianceRepository appRepo; 
+    private ApplianceRepository appRepo;
+
+    
+
+    @Override
+    public List<Appliance> findAll() {
+        return appRepo.findAll(); //To change body of generated methods, choose Tools | Templates.
+    }
     
     @Override
-    public List <Appliance> getBrandStart(String letter){
-        List<Appliance> apps = new ArrayList<>();
+    public Appliance getBrandStart(String letter){
         List<Appliance> allApps = appRepo.findAll();
+        Appliance applFound=null;
         
-        /*for (Person person : allPersons) {
-            if (person.getAge() > age) {
-                persons.add(person);
-            }
-        }
-        return persons;*/
         
         for(Appliance app : allApps){
             if(app.getBrand().startsWith(letter.toUpperCase()) || app.getBrand().startsWith(letter.toLowerCase())  ){
-                apps.add(app);
+               applFound= app;
             }
         }
-        return apps;
+        return applFound;
+    }
+
+    @Override
+    public int getNumberOfAppliances() {
+          List<Appliance> allApps = findAll();
+        return allApps.size();
+    }
+
+    @Override
+    public Appliance find(Long id) {
+        return appRepo.findOne(id);
+    }
+
+    @Override
+    public Appliance persists(Appliance entity) {
+        return appRepo.save(entity);
+    }
+
+    @Override
+    public Appliance merge(Appliance entity) {
+        if (entity.getId() != null) {
+            return appRepo.save(entity);
+        }
+        return null;
+    }
+
+    @Override
+    public void remove(Appliance entity) {
+        appRepo.delete(entity);
     }
 }

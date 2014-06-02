@@ -26,7 +26,7 @@ import org.testng.annotations.Test;
  */
 public class ApplianceRestController {
         private final RestTemplate restTemplate = new RestTemplate();
-    private final static String URL = "http://localhost:8084/retailWarehouse/";
+    private final static String URL = "http://localhost:8083/retailWarehouse/";
     
     public ApplianceRestController() {
     }

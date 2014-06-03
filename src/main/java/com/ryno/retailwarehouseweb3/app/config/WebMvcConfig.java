@@ -24,7 +24,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
-import com.ryno.Application;
+import com.ryno.retailwarehouseweb3.Application;
 /**
  *
  * @author Ryno

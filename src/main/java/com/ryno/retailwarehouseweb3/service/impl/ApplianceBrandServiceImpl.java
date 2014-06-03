@@ -45,11 +45,11 @@ public class ApplianceBrandServiceImpl implements ApplianceBrandService {
         return applFound;
     }
 
-    @Override
+  /* @Override
     public int getNumberOfAppliances() {
           List<Appliance> allApps = findAll();
         return allApps.size();
-    }
+    }*/
 
     @Override
     public Appliance find(Long id) {

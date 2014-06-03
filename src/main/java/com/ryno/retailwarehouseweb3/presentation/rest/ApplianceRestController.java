@@ -19,9 +19,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
  *
  * @author Ryno
  */
-    @Controller  // Annotation to make this class be detectable by the config as a controller
+@Controller  // Annotation to make this class be detectable by the config as a controller
 @RequestMapping(value = "api/app") // This the url e.g http://localhost:8084/askweb/api/club
 public class ApplianceRestController {
+   
     @Autowired
     private ApplianceBrandService appService;
     

@@ -40,7 +40,7 @@ public class ApplianceRestController {
         HttpEntity<Appliance> requestEntity = new HttpEntity<>(app, getContentType());
 //        Make the HTTP POST request, marshaling the request to JSON, and the response to a String
         ResponseEntity<String> responseEntity = restTemplate.
-                exchange(URL + "api/club/create", HttpMethod.POST, requestEntity, String.class);
+                exchange(URL + "api/app/create", HttpMethod.POST, requestEntity, String.class);
         System.out.println(" THE RESPONSE BODY " + responseEntity.getBody());
         System.out.println(" THE RESPONSE STATUS CODE " + responseEntity.getStatusCode());
         System.out.println(" THE RESPONSE IS HEADERS " + responseEntity.getHeaders());
@@ -58,14 +58,14 @@ public class ApplianceRestController {
         HttpEntity<Appliance> requestEntity = new HttpEntity<>(app, getContentType());
 //        Make the HTTP POST request, marshaling the request to JSON, and the response to a String
         ResponseEntity<String> responseEntity = restTemplate.
-                exchange(URL + "api/appliance/create", HttpMethod.POST, requestEntity, String.class);
+                exchange(URL + "api/app/create", HttpMethod.POST, requestEntity, String.class);
         System.out.println(" THE RESPONSE BODY " + responseEntity.getBody());
         System.out.println(" THE RESPONSE STATUS CODE " + responseEntity.getStatusCode());
         System.out.println(" THE RESPONSE IS HEADERS " + responseEntity.getHeaders());
         Assert.assertEquals(responseEntity.getStatusCode(), HttpStatus.OK);
 
     }
-
+@Test
     public void testreadApplianceByNameName() {
         String clubName = "samsung";
         HttpEntity<?> requestEntity = getHttpEntity();

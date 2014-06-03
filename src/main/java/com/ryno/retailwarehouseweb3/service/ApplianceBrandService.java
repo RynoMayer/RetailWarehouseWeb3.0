@@ -15,5 +15,5 @@ import java.util.List;
  */
 public interface ApplianceBrandService extends Service<Appliance, Long>{
     public Appliance getBrandStart(String letter);
-    public int getNumberOfAppliances();
+    
 }

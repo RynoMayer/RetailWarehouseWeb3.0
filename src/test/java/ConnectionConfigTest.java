@@ -6,7 +6,7 @@
 
 
 
-import com.ryno.Application;
+import com.ryno.retailwarehouseweb3.Application;
 import javax.sql.DataSource;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.annotation.Bean;
